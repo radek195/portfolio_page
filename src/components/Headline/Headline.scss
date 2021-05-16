@@ -1,0 +1,25 @@
+@import "../../config";
+
+.headline {
+  @include flex-center;
+  justify-content: flex-start;
+  padding-right: 30%;
+  padding-left: 25px;
+  margin-bottom: 20px;
+  font-size: 10px;
+
+  @media screen and #{$tablet} {
+    padding-left: 45px;
+  }
+  @media screen and #{$desktop} {
+    padding-left: 65px;
+  }
+
+  &__title {
+    font-size: 1.7em;
+    display: flex;
+    font-weight: bold;
+    display: inline-block;
+    width: 170px;
+  }
+}

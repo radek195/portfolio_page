@@ -1,0 +1,86 @@
+@import "../../config";
+.tools {
+  font-size: 16px;
+  position: relative;
+  padding: 35px 15px;
+  @include content;
+
+  @media screen and #{$desktop} {
+    padding: 55px 80px;
+  }
+
+  &::before {
+    content: "TOOLS";
+    @include beforeSkill;
+  }
+
+  &__container {
+    @include flex-center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding-bottom: 25px;
+  }
+
+  &__item {
+    @include flex-center;
+    flex-direction: column;
+    margin-bottom: 40px;
+  }
+
+  &__img {
+    margin-bottom: 5px;
+    width: 28px;
+    height: 28px;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: center;
+
+    @media screen and #{$tablet} {
+      width: 35px;
+      height: 35px;
+      margin-bottom: 12px;
+    }
+
+    @media screen and #{$smallDesktop} {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 22px;
+    }
+  }
+
+  &__title {
+    font-size: 0.8em;
+    font-weight: 700;
+    text-align: center;
+
+    @media screen and #{$smallDesktop} {
+      font-size: 1em;
+      letter-spacing: 1px;
+    }
+  }
+
+  &__description {
+    font-size: 1em;
+    text-align: center;
+
+    @media screen and #{$tablet} {
+      font-size: 1.3em;
+      padding: 0 40px;
+      letter-spacing: 1px;
+    }
+    @media screen and #{$desktop} {
+      padding: 0;
+    }
+  }
+}
+
+@keyframes showIcon {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}

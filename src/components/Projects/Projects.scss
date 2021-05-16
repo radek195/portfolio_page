@@ -1,0 +1,179 @@
+@import "../../config";
+
+.projects {
+  margin-bottom: 120px;
+
+  &__container {
+    @include flex-center;
+    @include content;
+    justify-content: space-around;
+    flex-flow: row;
+    flex-wrap: wrap;
+    padding: 20px 0;
+  }
+}
+
+.card {
+  position: relative;
+  @include flex-center;
+  flex-direction: column;
+  background-size: 100%;
+  border-radius: 14px;
+  width: 168px;
+  height: 280px;
+  color: $bright;
+  margin: 20px;
+  font-size: 10px;
+  transition: 0.3s;
+  overflow: hidden;
+  cursor: pointer;
+
+  &:hover {
+    background-size: 105%;
+  }
+
+  &:hover .github {
+    animation: slide 0.1s linear 0.1s both;
+  }
+
+  @media screen and #{$largeMobile} {
+    width: 192px;
+    height: 320px;
+  }
+
+  @media screen and #{$desktop} {
+    width: 240px;
+    height: 400px;
+  }
+
+  &:nth-child(1) {
+    background-image: linear-gradient(rgba($dark, 0.7), rgba($bright, 0.12)),
+      url("../../images/games.png");
+  }
+
+  &:nth-child(2) {
+    background-image: linear-gradient(rgba($dark, 0.7), rgba($dark, 0.6)),
+      url("../../images/food.png");
+  }
+
+  &__title {
+    letter-spacing: 2px;
+    font-size: 2em;
+    transition: 0.3s;
+    margin-bottom: 20px;
+    @media screen and #{$largeMobile} {
+      letter-spacing: 3px;
+      font-size: 2.5em;
+    }
+  }
+
+  &:hover &__title {
+    opacity: 0;
+  }
+
+  &__description {
+    font-size: 1em;
+    font-weight: 400;
+    text-align: center;
+    width: 85%;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    @media screen and #{$largeMobile} {
+      font-size: 1.6em;
+    }
+  }
+
+  &:hover &__description {
+    opacity: 0;
+  }
+
+  &__stack {
+    position: absolute;
+    opacity: 0;
+    @include flex-center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 80%;
+    transition: 0.4s;
+    transition-delay: 0.3s;
+  }
+
+  &:hover &__stack {
+    animation: show 0.1s linear 0.3s both;
+  }
+
+  &__technology {
+    text-align: center;
+    font-size: 1.3em;
+    width: 100%;
+    transform: translateY(-30px);
+
+    @media screen and #{$desktop} {
+      font-size: 1.8em;
+    }
+  }
+}
+
+.tech {
+  width: 28px;
+  height: 28px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+
+  @media screen and #{$largeMobile} {
+    width: 30px;
+    height: 30px;
+  }
+
+  @media screen and #{$desktop} {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+.github {
+  position: absolute;
+  font-size: 1em;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba($dark, 0.4);
+  transform: translateY(100%);
+  transition: 0.4s;
+
+  @media screen and #{$desktop} {
+    font-size: 1.2em;
+  }
+
+  &__item {
+    padding: 12px;
+    display: inline-block;
+    width: 50%;
+    text-align: center;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $dark;
+      font-size: 1.1em;
+    }
+  }
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide {
+  from {
+    transform: translateY(100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
