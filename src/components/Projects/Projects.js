@@ -1,6 +1,5 @@
 import React from "react";
 import "./Projects.scss";
-import Headline from "../Headline/Headline";
 import { projectsArray } from "../../content";
 
 const Projects = () => {
@@ -24,12 +23,16 @@ const Projects = () => {
         </div>
         <div className="github">
           <div className="github__item">
-            <i className="far fa-eye"></i>
-            <p>Demo</p>
+            <a href={project.demo} target="_blank" rel="noreferrer">
+              <i className="far fa-eye"></i>
+              <p>Demo</p>
+            </a>
           </div>
           <div className="github__item">
-            <i className="fas fa-code"></i>
-            <p>Code</p>
+            <a href={project.code} target="_blank" rel="noreferrer">
+              <i className="fas fa-code"></i>
+              <p>Code</p>
+            </a>
           </div>
         </div>
       </div>

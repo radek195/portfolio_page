@@ -63,7 +63,7 @@ $bigDesktop: "(min-width: 1700px)";
 
 @mixin content {
   background-color: rgba(white, 0.2);
-  margin-bottom: 72px;
+  margin-bottom: 92px;
   border-radius: 10px;
 
   @media screen and #{$desktop} {

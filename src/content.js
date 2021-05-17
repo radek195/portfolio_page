@@ -14,11 +14,15 @@ export const projectsArray = [
     title: "Gamebrary",
     description: "Library made for browsing video games.",
     stack: [react, sass],
+    code: "https://github.com/radek195/games",
+    demo: "https://radek195.github.io/games/",
   },
   {
     title: "Food Idea",
     description: "Website created for searching food recipes. ",
     stack: [html, sass, js],
+    code: "https://github.com/radek195/food_idea",
+    demo: "https://radek195.github.io/food_idea/",
   },
 ];
 

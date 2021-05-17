@@ -172,7 +172,7 @@
 
   &__item {
     font-size: 1.95em;
-
+    transition: 0.2s;
     @media screen and #{$smallDesktop} {
       margin-left: 67px;
       letter-spacing: 3px;
@@ -183,6 +183,16 @@
       @media screen and #{$smallDesktop} {
         margin-right: 50px;
       }
+    }
+
+    &:hover {
+      color: $orange;
+    }
+    & span {
+      transition: 0.2s;
+    }
+    &:hover span {
+      color: $bright;
     }
   }
 }

@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useLayoutEffect } from "react";
 import SpinnerWheel from "./SpinnerWheel";
 import { SkillsArray as arr } from "../../content";
 import "./HardSkills.scss";
-
+import { TweenMax } from "gsap";
 // https://codesandbox.io/s/brave-faraday-g9089?file=/src/App.js
 
 const HardSkills = () => {
@@ -21,13 +21,30 @@ const HardSkills = () => {
   };
 
   useEffect(() => {
+    TweenMax.fromTo(
+      keywords.current,
+      0.45,
+      {
+        y: -10,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+      }
+    );
+
     setTimeout(() => {
-      keywords.current.style.animation = "";
+      TweenMax.to(keywords.current, 0.45, {
+        y: 10,
+        opacity: 0,
+        delay: 2.8,
+      });
       setRotation(rotation + displayAngle);
     }, interval * 1000);
-
-    keywords.current.style.animation = `fadeKeywords ${interval}s linear`;
   }, [rotation, displayAngle]);
+
+  useLayoutEffect(() => {});
 
   return (
     <section className="hardskills" id="skills">

@@ -5,7 +5,7 @@
   position: relative;
   padding: 35px 15px;
   @include content;
-
+  margin-bottom: 370px;
   @include flex-center;
   flex-direction: column-reverse;
 
