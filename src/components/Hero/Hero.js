@@ -1,15 +1,33 @@
-import React, { useState, useRef, useLayoutEffect } from "react";
+import React, { useState, useRef, useEffect, useLayoutEffect } from "react";
 import { TweenMax, Power3 } from "gsap";
 import { Link, animateScroll as scroll } from "react-scroll";
 
 import "./Hero.scss";
 
 const Hero = () => {
-  const [navigation, setNavigation] = useState(false);
+  const [navigation, setNavigation] = useState(true);
   const hero = useRef();
   const header = useRef();
   const list = useRef();
-  // const tm = new TweenMax();
+  const mobile = useRef();
+
+  useEffect(() => {
+    const onBodyClick = (event) => {
+      if (
+        (list.current && list.current.contains(event.target)) ||
+        (mobile.current && mobile.current.contains(event.target))
+      ) {
+        return;
+      }
+      setNavigation(false);
+    };
+
+    document.body.addEventListener("click", onBodyClick);
+
+    return () => {
+      document.body.removeEventListener("click", onBodyClick);
+    };
+  }, []);
 
   const toggleNavigation = () => {
     navigation ? setNavigation(false) : setNavigation(true);
@@ -50,17 +68,41 @@ const Hero = () => {
           }`}
         >
           <li className="navigation__item">
-            <Link to="projects" smooth={true} offset={-70} duration={500}>
+            <Link
+              to="projects"
+              smooth={true}
+              offset={-70}
+              duration={500}
+              onClick={() => {
+                toggleNavigation();
+              }}
+            >
               <span className="decoration">&</span> projects
             </Link>
           </li>
           <li className="navigation__item">
-            <Link to="skills" smooth={true} offset={-70} duration={500}>
+            <Link
+              to="skills"
+              smooth={true}
+              offset={-70}
+              duration={500}
+              onClick={() => {
+                toggleNavigation();
+              }}
+            >
               <span className="decoration">&</span> skills
             </Link>
           </li>
           <li className="navigation__item">
-            <Link to="about" smooth={true} offset={-70} duration={500}>
+            <Link
+              to="about"
+              smooth={true}
+              offset={-70}
+              duration={500}
+              onClick={() => {
+                toggleNavigation();
+              }}
+            >
               <span className="decoration">&</span> about
             </Link>
           </li>
@@ -70,10 +112,17 @@ const Hero = () => {
               scrollToBottom();
             }}
           >
-            <span className="decoration">&</span> contact
+            <span
+              onClick={() => {
+                toggleNavigation();
+              }}
+            >
+              <span className="decoration">&</span> contact
+            </span>
           </li>
         </ul>
         <div
+          ref={mobile}
           className={`navigation__mobile ${
             navigation ? "navigation__mobile--open" : ""
           }`}
