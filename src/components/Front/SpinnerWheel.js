@@ -1,5 +1,5 @@
 import React from "react";
-import "./HardSkills.scss";
+import "./Front.scss";
 
 const SpinnerWheel = ({ items, size, rotation, displayAngle }) => {
   const tiles = items.map((item, index) => {
@@ -16,7 +16,7 @@ const SpinnerWheel = ({ items, size, rotation, displayAngle }) => {
         }}
       >
         <div
-          className="hardskills__item"
+          className="front__item"
           style={{
             backgroundImage: `url(${item.icon})`,
             transform: `translateY(-50%) rotate(${

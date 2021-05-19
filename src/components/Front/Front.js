@@ -1,17 +1,18 @@
 import React, { useState, useEffect, useRef, useLayoutEffect } from "react";
 import SpinnerWheel from "./SpinnerWheel";
 import { SkillsArray as arr } from "../../content";
-import "./HardSkills.scss";
+import "./Front.scss";
 import { TweenMax } from "gsap";
 // https://codesandbox.io/s/brave-faraday-g9089?file=/src/App.js
 
-const HardSkills = () => {
+const Front = () => {
   const [rotation, setRotation] = useState(0);
+  let [size, setSize] = useState(220);
   const keywords = useRef(null);
+  const spinner = useRef(null);
 
   const interval = 3;
   const displayAngle = 360 / arr.length;
-  const wheelSize = 220;
   const current = (rotation / displayAngle) % arr.length;
 
   const mapKeywords = (arr) => {
@@ -44,22 +45,31 @@ const HardSkills = () => {
     }, interval * 1000);
   }, [rotation, displayAngle]);
 
-  useLayoutEffect(() => {});
+  useLayoutEffect(() => {
+    if (window.innerWidth > 1400) {
+      setSize(280);
+    }
+    if (window.innerWidth < 1400) {
+      setSize(220);
+    }
+  });
 
   return (
-    <section className="hardskills" id="skills">
-      <div className="hardskills__text">
-        <h4 className="hardskills__description">
-          When it comes to programming these are my most important skills:
+    <section className="front" id="skills">
+      <div className="front__text">
+        <h4 className="front__description">
+          These are my most important{" "}
+          <span className="decoration">technologies</span> that I use for
+          creating websites:
         </h4>
-        <div ref={keywords} className="hardskills__keywords">
+        <div ref={keywords} className="front__keywords">
           {mapKeywords(arr[current].keywords)}
         </div>
       </div>
-      <div className="hardskills__spinner">
+      <div ref={spinner} className="front__spinner">
         <SpinnerWheel
           items={arr}
-          size={wheelSize}
+          size={size}
           rotation={rotation}
           displayAngle={displayAngle}
         />
@@ -68,4 +78,4 @@ const HardSkills = () => {
   );
 };
 
-export default HardSkills;
+export default Front;

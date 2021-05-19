@@ -65,6 +65,7 @@ $bigDesktop: "(min-width: 1700px)";
   background-color: rgba(white, 0.2);
   margin-bottom: 92px;
   border-radius: 10px;
+  box-shadow: 4px 4px 3px 1px rgba($dark, 0.2);
 
   @media screen and #{$desktop} {
     padding-top: 70px;

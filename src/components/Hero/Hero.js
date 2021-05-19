@@ -40,21 +40,20 @@ const Hero = () => {
   useLayoutEffect(() => {
     let heroHeight = hero.current.getBoundingClientRect().height;
 
-    TweenMax.from(hero.current, 1.7, {
+    TweenMax.from(hero.current, 1.4, {
       y: -1 * heroHeight,
       ease: Power3.easeOut,
     });
-
-    TweenMax.from(header.current, 0.7, {
+    TweenMax.from(header.current, 0.4, {
       y: 10,
       opacity: 0,
       delay: 1.2,
     });
     TweenMax.staggerFrom(
       list.current.children,
-      0.6,
-      { opacity: 0, y: -10, delay: 1.7 },
-      0.15
+      0.5,
+      { opacity: 0, y: -10, delay: 1.3 },
+      0.2
     );
   }, []);
 

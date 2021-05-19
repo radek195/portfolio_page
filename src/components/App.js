@@ -4,7 +4,7 @@ import { TweenMax } from "gsap";
 import Hero from "./Hero/Hero";
 import Projects from "./Projects/Projects";
 import Headline from "./Headline/Headline";
-import HardSkills from "./HardSkills/HardSkills";
+import Front from "./Front/Front";
 import About from "./About/About";
 import Tools from "./Tools/Tools";
 import Contact from "./Contact/Contact";
@@ -18,7 +18,7 @@ const App = () => {
     TweenMax.from(main.current, 0.4, {
       opacity: 0,
       y: -10,
-      delay: 2.4,
+      delay: 1.7,
     });
   });
 
@@ -30,7 +30,7 @@ const App = () => {
         <Headline title="projects" />
         <Projects />
         <Headline title="skills" />
-        <HardSkills />
+        <Front />
         <Tools />
 
         <Headline title="about" />
