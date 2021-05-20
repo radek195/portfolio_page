@@ -5,7 +5,7 @@ import { Link, animateScroll as scroll } from "react-scroll";
 import "./Hero.scss";
 
 const Hero = () => {
-  const [navigation, setNavigation] = useState(true);
+  const [navigation, setNavigation] = useState(false);
   const hero = useRef();
   const header = useRef();
   const list = useRef();

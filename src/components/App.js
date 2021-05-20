@@ -5,6 +5,7 @@ import Hero from "./Hero/Hero";
 import Projects from "./Projects/Projects";
 import Headline from "./Headline/Headline";
 import Front from "./Front/Front";
+import Back from "./Back/Back";
 import About from "./About/About";
 import Tools from "./Tools/Tools";
 import Contact from "./Contact/Contact";
@@ -31,6 +32,7 @@ const App = () => {
         <Projects />
         <Headline title="skills" />
         <Front />
+        <Back />
         <Tools />
 
         <Headline title="about" />

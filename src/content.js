@@ -8,6 +8,9 @@ import git from "./images/icons/git.svg";
 import figma from "./images/icons/figma.svg";
 import code from "./images/icons/code.svg";
 import npm from "./images/icons/npm.svg";
+import java from "./images/icons/java.svg";
+import mysql from "./images/icons/mysql.svg";
+import firebase from "./images/icons/firebase.svg";
 
 export const projectsArray = [
   {
@@ -78,5 +81,20 @@ export const ToolsArray = [
   {
     icon: npm,
     title: "npm",
+  },
+];
+
+export const BackArray = [
+  {
+    title: "Java",
+    icon: java,
+  },
+  {
+    title: "MySQL",
+    icon: mysql,
+  },
+  {
+    title: "Firebase",
+    icon: firebase,
   },
 ];

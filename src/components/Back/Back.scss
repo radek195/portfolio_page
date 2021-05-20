@@ -1,6 +1,6 @@
 @import "../../config";
 
-.front {
+.back {
   position: relative;
   @include flex-center;
   flex-direction: column;
@@ -11,7 +11,7 @@
   &::before {
     text-align: center;
     line-height: 2;
-    content: "FRONT END";
+    content: "BACK END";
     @include beforeSkill;
   }
 
@@ -24,10 +24,8 @@
     justify-content: space-between;
   }
 
-  &__text {
-    @media screen and #{$tablet} {
-      width: 50%;
-    }
+  &__container {
+    margin: 0 auto;
   }
 
   &__description {
@@ -48,74 +46,64 @@
     }
   }
 
-  &__keywords {
-    width: 100%;
-    font-size: 1em;
-    font-weight: 700;
-
-    @include flex-center;
-    justify-content: space-around;
-
+  &__list {
+    margin: 0 auto;
     @media screen and #{$tablet} {
-      font-size: 1.1em;
-    }
-  }
-
-  &__spinner {
-    position: relative;
-    @include flex-center;
-    flex-direction: column;
-    margin: 45px 0 30px 0;
-    overflow: hidden;
-    height: 260px;
-    width: 260px;
-
-    @media screen and #{$tablet} {
-      margin: 30px;
+      padding: 30px;
     }
 
     @media screen and #{$desktop} {
-      width: 350px;
-      height: 350px;
+      width: 800px;
+      margin: 0 auto;
     }
   }
 
   &__item {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex-center;
     flex-direction: column;
+    margin-bottom: 35px;
 
-    width: 40px;
-    height: 40px;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 70% 70%;
-
-    @media screen and #{$smallDesktop} {
-      background-size: 100% 100%;
-      width: 44px;
-      height: 44px;
+    @media screen and #{$tablet} {
+      flex-direction: row;
+      margin-bottom: 55px;
     }
   }
-}
+  &__item:nth-child(even) {
+    @media screen and #{$tablet} {
+      flex-direction: row-reverse;
+    }
+  }
 
-@keyframes fadeKeywords {
-  0% {
-    transform: translateY(-5px);
+  &__left {
     opacity: 0;
+    @include flex-center;
+    flex-direction: column;
+    margin-bottom: 5px;
+    @media screen and #{$tablet} {
+      width: 50%;
+    }
+    @media screen and #{$desktop} {
+      align-items: center;
+    }
   }
-  12% {
-    transform: translateY(0px);
-    opacity: 1;
+
+  &__icon {
+    width: 30px;
+    margin-bottom: 4px;
+    @media screen and #{$tablet} {
+      width: 40px;
+    }
+    @media screen and #{$smallDesktop} {
+      width: 44px;
+    }
   }
-  90% {
-    transform: translateY(0px);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(5px);
+
+  &__right {
     opacity: 0;
+    text-align: center;
+    @media screen and #{$tablet} {
+      text-align: left;
+      width: 85%;
+    }
   }
 }
