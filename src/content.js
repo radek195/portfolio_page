@@ -14,6 +14,13 @@ import firebase from "./images/icons/firebase.svg";
 
 export const projectsArray = [
   {
+    title: "Costco",
+    description: "E-commerce app where you can buy tea and coffe.",
+    stack: [react, redux, sass],
+    code: "https://github.com/radek195/costco",
+    demo: "https://radek195.github.io/costco/",
+  },
+  {
     title: "Gamebrary",
     description: "Library made for browsing video games.",
     stack: [react, sass],

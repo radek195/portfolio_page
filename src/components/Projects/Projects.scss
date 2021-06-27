@@ -18,6 +18,7 @@
   @include flex-center;
   flex-direction: column;
   background-size: 100%;
+  background-position: center;
   border-radius: 14px;
   width: 168px;
   height: 280px;
@@ -47,11 +48,16 @@
   }
 
   &:nth-child(1) {
+    background-image: linear-gradient(rgba($dark, 0.5), rgba($dark, 0.6)),
+      url("../../images/costco.png");
+  }
+
+  &:nth-child(2) {
     background-image: linear-gradient(rgba($dark, 0.7), rgba($bright, 0.12)),
       url("../../images/games.png");
   }
 
-  &:nth-child(2) {
+  &:nth-child(3) {
     background-image: linear-gradient(rgba($dark, 0.7), rgba($dark, 0.6)),
       url("../../images/food.png");
   }
